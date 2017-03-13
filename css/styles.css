@@ -2,6 +2,13 @@
 YOUR STYLES
 *******************/
 
+.temp {
+  color: red;
+}
+
+.image img{
+  outline: 5px solid red;
+}
 
 
 
