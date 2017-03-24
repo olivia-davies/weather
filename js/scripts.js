@@ -7,75 +7,60 @@
 // Check for GeoLocation Support on Browser
 if ('geolocation' in navigator) {
 
-   $('.geo').show(); 
+    $('.geo').show();
 
 } else {
-  
-  $('.geo').hide();
-  $('.geo').prepend('<p>Geolocation Not Supported</p>');
+
+    $('.geo').hide();
+    $('.geo').prepend('<p>Geolocation Not Supported</p>');
 
 }
 
-// On Click, Get Geolocation, Call Weather Function
-$('#iconWeather').click( function() {
-      
-    //load weather using your lat/long coordinates
-    navigator.geolocation.getCurrentPosition(function(position) {
-      
-      // Check lat/long coordinates
-      var lat = position.coords.latitude;
-      var long = position.coords.longitude;
-      
-      console.log(lat, long);
-      
-      // Send to SimpleWeather
-      getWeather( lat + ',' + long ); 
-    });
-   
-});
-
-
+// Call Simple Weather
 var getWeather = function (location) {
-$.simpleWeather({
-    location: location,
-    unit: 'f',
-    success: function (weather) {
-        
-        // Entire weather object
-        console.log(weather);
+    $.simpleWeather({
+        location: location,
+        unit: 'f',
+        success: function (weather) {
 
-        // Display Data
+            // Entire weather object
+            console.log(weather);
+
+            // Display Data
 
             $('.geo').text(weather.city);
             $('.temp').text(weather.temp);
+
+            // Change Icon w/ Condition code & Diplay Icon Data
             $('i').attr('class', iconCode);
-       
-         // Change Icon w/ Condition code
-        $('#iconWeather').addClass(weather.currently);
-        
-        var iconCode = 'wi wi-yahoo-' + weather.code;
-        $('i').attr('class', iconCode);
 
-            },
-    error: function (error) {
-        // Show if weather cannot be retreived
-        console.log('Look outside.');
-    }
+            var iconCode = 'wi wi-yahoo-' + weather.code;
+            $('i').attr('class', iconCode);
 
-});
-}
+        },
 
-//// Get and store Geo Location lat/long coordinates
-//navigator.geolocation.getCurrentPosition(
-//
-//    function (position) {
-//
-//        // wait a few seconds to receive location
-//        
-//        var lat = position.coords.latitude;
-//        var long = position.coords.longitude;
-//
-//        console.log(lat, long);
-//
-//
-//    });
+
+        error: function (error) {
+            // Show if weather cannot be retreived
+            alert("For crying out loud. Just look outside");
+        }
+
+    });
+};
+
+// Get and store Geo Location lat/long coordinates
+navigator.geolocation.getCurrentPosition(
+
+    function (position) {
+
+        // wait a few seconds to receive location
+
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+
+        console.log(lat, long);
+
+        // Send to SimpleWeather
+        getWeather(lat + ',' + long);
+
+    });
