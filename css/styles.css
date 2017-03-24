@@ -1,15 +1,56 @@
+@import url("weather-icons.css")
+@import url("weather-icons-wind.css")
+
+
+
+
 /********************
 YOUR STYLES
 *******************/
+       
+{}
 
-.temp {
-  color: red;
+
+
+body {
+    background: #1D2B64; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #1D2B64 , #F8CDDA); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #1D2B64 , #F8CDDA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-repeat: no-repeat;
+    height: 100vh;
 }
 
-.image img{
-  outline: 5px solid red;
+
+.temp-cond{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+     
 }
 
+#timepos {
+    font-size: 3.4em;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.geo {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+i {
+    font-size: 6em;
+    color: white;
+    margin-left: 40%;
+}
+
+
+.cusswerds {
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+}
 
 
 /********************
@@ -19,9 +60,11 @@ MEDIA QUERIES
 @media screen and (min-width: 20em) { 
 
   /* Diagnostic Styling. Delete When Done. */
+/*
   body:before {
        background: yellow;
        content: "Mobile Size";
+*/
   }
   
 }
@@ -29,7 +72,7 @@ MEDIA QUERIES
 /* Tablet:  768px = 160em */
 @media screen and (min-width: 48em)  {
 
-  /* Diagnostic Styling. Delete When Done. */
+   Diagnostic Styling. Delete When Done. 
   body:before {
        background: yellow;
        content: "Tablet Size";
