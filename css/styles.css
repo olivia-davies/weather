@@ -9,8 +9,19 @@ body {
     height: 100vh;
 }
 
+
+/*
+#cover {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+*/
+
+
 /*THEMES*/
-.rainy{
+
+.rainy {
     background: #1D2B64;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #1D2B64, #F8CDDA);
@@ -20,19 +31,41 @@ body {
     background-repeat: no-repeat;
 }
 
-.bright{
-    
+.bright {
+    background: #F7971E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F7971E, #FFD200);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F7971E, #FFD200);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.hail {
-    background: #8e9eab; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #8e9eab , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #8e9eab , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.snow {
+    background: #8e9eab;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #8e9eab, #eef2f3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #8e9eab, #eef2f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.windy {
+    background: #abbaab;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #abbaab, #ffffff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #abbaab, #ffffff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+.cloudydark {
+    background: #1F1C2C; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #1F1C2C , #928DAB); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #1F1C2C , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 /*Main Content*/
+
 #loc-temp {
     display: flex;
     justify-content: space-between;
@@ -60,28 +93,12 @@ i {
     font-size: 7em;
     color: white;
     opacity: 0.5;
-    
 }
 
-#cusswerds {
+ #cusswerds {
     color: white;
     width: 90%;
+    padding-top: 40px;
     margin: 0 auto;
 }
 
-
-/********************
-MEDIA QUERIES
-*******************/
-
-
-/* Mobile: 320px = 20em */
-
-@media screen and (min-width: 20em) {
-    /* Diagnostic Styling. Delete When Done. */
-    /*
-  body:before {
-       background: yellow;
-       content: "Mobile Size";
-*/
-}

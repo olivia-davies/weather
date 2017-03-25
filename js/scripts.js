@@ -3,6 +3,9 @@
 // https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js
 // https://cdnjs.cloudflare.com/ajax/libs/sidr/2.2.1/jquery.sidr.min.js
 
+// $(window).on('load', function() {
+//    $("#cover").fadeOut(200);
+//});
 
 // Get Geo Location
 // Check for GeoLocation Support on Browser
@@ -50,13 +53,25 @@ var getWeather = function (location) {
                 console.log('SAH DU');
 
                 $('body').addClass('rainy');
-                $('.cusswerds').h1('When the frick frack did it start raining?!');
+                $('.cusswerds').text('When the frick frack did it start raining?!');
             }
 
-            if (weather.code == 8 || weather.code == 10 || weather.code == 37) {
-                $('body').addClass('hail');
-                $('.cusswerds').h1('What the HAIL is going on out there?');
+            if (weather.code === 8 || weather.code === 10 || weather.code === 37) {
+                $('body').addClass('snow');
+                $('.cusswerds').text('Oh look. Its the devils DANDRUFF');
             }
+            
+            
+            if (weather.code === 21 || weather.code === 23 || weather.code === 24) {
+                $('body').addClass('wind');
+                $('.cusswerds').text('Windy? Shut the front door.');
+            }
+            
+            if (weather.code >= 26 && weather.code <= 30 || weather.code == 33) {
+                $('body').addClass('cloudydark');
+                $('.cusswerds').text('erhmehgerd erts derk.');
+            }
+            
         },
                 error: function (error) {
             // Show if weather cannot be retreived
