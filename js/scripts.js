@@ -3,9 +3,14 @@
 // https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js
 // https://cdnjs.cloudflare.com/ajax/libs/sidr/2.2.1/jquery.sidr.min.js
 
-// $(window).on('load', function() {
-//    $("#cover").fadeOut(200);
-//});
+$(window).load(function() {
+   // PAGE IS FULLY LOADED  
+   // FADE OUT YOUR OVERLAYING DIV
+   $('#overlay').fadeOut(8000);
+});
+
+
+
 
 // Get Geo Location
 // Check for GeoLocation Support on Browser
